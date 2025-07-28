@@ -1,0 +1,17 @@
+[
+    {
+        "item": "Pen",
+        "stock": 120,
+        "Status": "In Stock"
+    },
+    {
+        "item": "Notebook",
+        "stock": 75,
+        "Status": "In Stock"
+    },
+    {
+        "item": "Eraser",
+        "stock": 0,
+        "Status": "Out of Stock"
+    }
+]
