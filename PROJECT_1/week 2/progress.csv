@@ -1,0 +1,6 @@
+progress_id,enrollment_id,completion_percentage,last_updated
+1,1,85,2024-02-01
+2,2,,2024-02-02
+3,3,abc,2024-02-03
+4,4,110,
+5,5,70,2024-02-05
