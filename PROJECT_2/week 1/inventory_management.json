@@ -1,0 +1,57 @@
+
+[{
+  "_id": {
+    "$oid": "687fbb2360c73df69da99913"
+  },
+  "product_id": 101,
+  "warehouse_id": 1,
+  "adjusted_by": "admin",
+  "adjustment_type": "Manual Correction",
+  "reason": "Stock mismatch found during physical count",
+  "adjustment_quantity": -5,
+  "date": {
+    "$date": "2025-07-22T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687fbb2360c73df69da99914"
+  },
+  "product_id": 102,
+  "warehouse_id": 2,
+  "adjusted_by": "system",
+  "adjustment_type": "Auto Alert",
+  "reason": "Stock dropped below reorder level",
+  "adjustment_quantity": -10,
+  "date": {
+    "$date": "2025-07-22T12:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687fbb2360c73df69da99915"
+  },
+  "product_id": 103,
+  "warehouse_id": 3,
+  "adjusted_by": "admin",
+  "adjustment_type": "Manual Correction",
+  "reason": "Damaged items removed after inspection",
+  "adjustment_quantity": -3,
+  "date": {
+    "$date": "2025-07-21T15:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687fbb2360c73df69da99916"
+  },
+  "product_id": 104,
+  "warehouse_id": 2,
+  "adjusted_by": "system",
+  "adjustment_type": "Auto Sync",
+  "reason": "Inventory synced with supplier delivery",
+  "adjustment_quantity": 20,
+  "date": {
+    "$date": "2025-07-20T09:00:00.000Z"
+  }
+}]
