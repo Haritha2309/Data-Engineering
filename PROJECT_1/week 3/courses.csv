@@ -1,0 +1,7 @@
+course_id,course_name,instructor,description
+C001,Python for Beginners,John Doe,Intro to Python with basics like loops and functions.
+C002,Data Science Fundamentals,Jane Smith,Learn data analysis and basic statistics.
+C003,Web Development Basics,Alan Turing,"HTML, CSS, and JavaScript for websites."
+C004,Machine Learning 101,Grace Hopper,Overview of ML models and concepts.
+FSD,Website Development,HARI,Frontend and backend development skills.
+EMBEDDED,Hardware + Software,KARPAGAM,Build embedded systems with C and sensors.
