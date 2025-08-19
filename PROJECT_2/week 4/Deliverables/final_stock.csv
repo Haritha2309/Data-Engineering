@@ -1,0 +1,10 @@
+warehouse_id,product_id,current_stock,product_name,reorder_level,price,warehouse_name,location,reorder_flag
+W01,P003,5,Monitor,3,7999.0,Main Warehouse,Chennai,NORMAL
+W03,P005,150,Laptop,10,55000.0,South Zone,Bangalore,OVERSTOCKED
+W01,P007,10,Webcam,8,3500.0,Main Warehouse,Chennai,NORMAL
+W03,P006,5,Headset,20,1999.0,South Zone,Bangalore,UNDERSTOCK
+W01,P002,90,Keyboard,5,499.5,Main Warehouse,Chennai,OVERSTOCKED
+W01,P001,40,Mouse,100,299.99,Main Warehouse,Chennai,UNDERSTOCK
+W02,P003,80,Monitor,3,7999.0,North Zone,Delhi,OVERSTOCKED
+W02,P001,40,Mouse,100,299.99,North Zone,Delhi,UNDERSTOCK
+W02,P004,8,USB Cable,15,149.0,North Zone,Delhi,UNDERSTOCK
