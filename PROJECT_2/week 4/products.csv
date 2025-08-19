@@ -1,0 +1,8 @@
+product_id,name,reorder_level,price
+P001,Mouse,100,299.99
+P002,Keyboard,5,499.5
+P003,Monitor,3,7999.0
+P004,USB Cable,15,149.0
+P005,Laptop,10,55000.0
+P006,Headset,20,1999.0
+P007,Webcam,8,3500.0
