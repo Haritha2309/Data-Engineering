@@ -1,0 +1,32 @@
+trigger:
+- main   
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: "3.x"
+    addToPath: true
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: "Install dependencies"
+
+- script: |
+    cd Task 2
+    python raw_sales.py
+  displayName: "Generate raw sales data"
+
+- script: |
+    cd Task 2
+    python data_processing.py
+  displayName: "Process and clean sales data"
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: "clean_sales_data.csv"
+    artifactName: "cleanedData"
+    publishLocation: "Container"
