@@ -1,0 +1,5 @@
+order_id,customer,region,revenue,cost,profit_margin,customer_segment
+1,Alice,East,120000.0,80000,0.3333333333333333,Platinum
+2,Bob,West,60000.0,40000,0.3333333333333333,Gold
+3,Charlie,Unknown,0.0,20000,-20000.0,Standard
+4,David,South,40000.0,25000,0.375,Standard

@@ -1,0 +1,68 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  pythonVersion: '3.10'
+
+steps:
+# -------------------------------
+# Step 1: Setup Python
+# -------------------------------
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(pythonVersion)'
+
+# -------------------------------
+# Step 2: Install dependencies
+# -------------------------------
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+# -------------------------------
+# Step 3: Run Data Pipeline (generate files)
+# -------------------------------
+- script: |
+    python raw_data.py
+    python sales_data.py
+  displayName: 'Run Data Processing'
+
+# -------------------------------
+# Step 4: Upload to Azure Blob Storage
+# -------------------------------
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'YourServiceConnectionName'   # Create a service connection in DevOps
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      echo "Uploading raw_sales_data.csv to Blob..."
+      az storage blob upload \
+        --account-name $(AZURE_STORAGE_ACCOUNT_NAME) \
+        --account-key $(AZURE_STORAGE_ACCOUNT_KEY) \
+        --container-name $(AZURE_CONTAINER_NAME) \
+        --file raw_sales_data.csv \
+        --name raw_sales_data.csv \
+        --overwrite true
+
+      echo "Uploading processed_sales_data.csv to Blob..."
+      az storage blob upload \
+        --account-name $(AZURE_STORAGE_ACCOUNT_NAME) \
+        --account-key $(AZURE_STORAGE_ACCOUNT_KEY) \
+        --container-name $(AZURE_CONTAINER_NAME) \
+        --file processed_sales_data.csv \
+        --name processed_sales_data.csv \
+        --overwrite true
+
+# -------------------------------
+# Step 5: Publish files as artifacts
+# -------------------------------
+- publish: raw_sales_data.csv
+  artifact: raw-data
+
+- publish: processed_sales_data.csv
+  artifact: processed-data
